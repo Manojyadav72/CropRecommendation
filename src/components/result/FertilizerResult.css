@@ -1,0 +1,5 @@
+/* FertilizerResult uses the same design as CropResult */
+/* All shared styles are in CropResult.css — this file only has overrides if needed */
+
+/* Import shared result styles */
+@import '../result/CropResult.css';

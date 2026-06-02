@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  padding: 0;
+  transition: filter 0.5s ease, background-color 0.5s ease;
+}
+
+body.light-theme {
+  filter: invert(1) hue-rotate(180deg);
+  background-color: #f0f7f0;
+}
+
+body.light-theme img,
+body.light-theme video,
+body.light-theme .profile-avatar,
+body.light-theme .dropdown-avatar,
+body.light-theme .logo-icon,
+body.light-theme canvas,
+body.light-theme .theme-toggle-item {
+  filter: invert(1) hue-rotate(180deg);
+}

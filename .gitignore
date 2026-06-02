@@ -1,0 +1,8 @@
+
+Backend/.env
+ChatbotBackend/.env
+node_modules/
+venv/
+__pycache__/
+
+JWT_SECRET=secret123

@@ -1,0 +1,204 @@
+/* ------------------------------
+   FULLY CENTERED CROP CALENDAR
+--------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.calendar-app {
+  font-family: 'Inter', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;           /* centers the entire app horizontally */
+  padding: 1.5rem 1.5rem;
+  /* background: #f4faf2; */
+   background: #0a0f0d; 
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;      /* centers all direct children horizontally */
+}
+
+/* Header – centered */
+.calendar-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.calendar-header h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  background: linear-gradient(135deg, #1e5a1e, #4caf50);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  letter-spacing: -0.3px;
+}
+
+.calendar-header p {
+  color: #4a6741;
+  font-weight: 500;
+  font-size: 0.9rem;
+  margin-top: 0.25rem;
+}
+
+/* State picker – centered */
+.state-picker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  background: rgb(191, 222, 168);
+  width: fit-content;
+  margin: 0 auto 2.5rem auto;  /* auto left/right centers it */
+  padding: 0.5rem 1.2rem;
+  border-radius: 60px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+  border: 1px solid #d9ead3;
+}
+
+.state-picker label {
+  font-weight: 600;
+  color: #2c5e2a;
+  font-size: 0.85rem;
+}
+
+.state-picker select {
+  padding: 0.4rem 1rem;
+  border-radius: 40px;
+  border: 1px solid #c8e0c2;
+  background: rgb(6, 52, 1);
+  font-weight: 500;
+  color: #94dd94;
+  cursor: pointer;
+  outline: none;
+  font-size: 0.85rem;
+}
+
+/* Months grid – centered, cards are responsive */
+.months-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 1.2rem;
+  width: 100%;              /* takes full width of centered container */
+  justify-items: center;    /* centers each card inside its grid cell */
+}
+
+/* Month card – consistent width, centered inside cell */
+.month-card {
+  background: rgb(38, 45, 42);
+  border-radius: 20px;
+  padding: 1rem 1rem 1.2rem;
+  transition: all 0.2s ease;
+  border: 1px solid #e2f0dd;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  width: 100%;
+  max-width: 240px;         /* optional: limits card width */
+}
+
+.month-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 20px -12px rgba(0, 0, 0, 0.12);
+  border-color: #c3e0b9;
+  background: #ffffff;
+}
+
+/* Active month */
+.month-card.active {
+  background: linear-gradient(135deg, #ffffff, #f4fcee);
+  border-left: 4px solid #2e7d32;
+  box-shadow: 0 8px 16px -8px rgba(46, 125, 50, 0.2);
+}
+
+/* Month header */
+.month-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.month-icon {
+  font-size: 1.3rem;
+}
+
+.month-header h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #027102;
+  letter-spacing: -0.2px;
+  flex: 1;
+}
+
+.current-badge {
+  background: #ff9800;
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 40px;
+  color: #2c2c1c;
+  text-transform: uppercase;
+}
+
+/* Crop chips */
+.crops-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.crop-chip {
+  background: #ecf9e8;
+  padding: 4px 10px;
+  border-radius: 30px;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: #026202;
+  transition: all 0.1s;
+  border: 1px solid #5f605f;
+}
+
+/* Responsive */
+@media (max-width: 700px) {
+  .calendar-app {
+    padding: 1rem;
+  }
+  .months-grid {
+    grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
+    gap: 1rem;
+  }
+  .month-card {
+    padding: 0.8rem;
+    max-width: 200px;
+  }
+  .crop-chip {
+    font-size: 0.65rem;
+    padding: 3px 8px;
+  }
+  .month-header h3 {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .months-grid {
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+  .month-card {
+    max-width: 180px;
+  }
+  .calendar-header h1 {
+    font-size: 1.8rem;
+  }
+  .calendar-header p {
+    font-size: 0.8rem;
+  }
+  .state-picker {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+  }
+}
