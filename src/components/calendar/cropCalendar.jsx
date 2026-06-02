@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./CropCalendar.css";
+import "./cropCalendar.css";
 
 const cropData = {
   UP: [
